@@ -3,6 +3,5 @@ title: "project_website"
 author: "Tianze Yang"
 ---
 
-This is a Quarto website.
+Welcome to my Protofilio Project website!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

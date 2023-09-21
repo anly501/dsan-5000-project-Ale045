@@ -9,6 +9,10 @@ website:
         text: Home
       - href: about.qmd
         text: About Me
+      - href: code.qmd
+        text: Code
+      - href: data.qmd
+        text: Data
       - href: introduction.qmd
         text: Introduction
       - href: data_garther.qmd

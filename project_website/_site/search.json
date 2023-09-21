@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "project_website",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Welcome to my Protofilio Project website!"
   },
   {
     "objectID": "introduction.html",
@@ -82,5 +82,26 @@
     "title": "About Me",
     "section": "",
     "text": "My name is Yang Tianze, currently studying in Georgetown University’s DSAN Master program. I graduate from both the University of South Australia with a Bachelor’s degree in Software Engineering (Honors) and Xi’an University of Architecture and Technology in Computer Science.\nFor my internship experiences, I worked for ZhiguangHailian Big Data Technology Co., LTD, and Zhihu Inc. During these internships, I improved my skills in data processing, software development, and machine learning in real world practice. At ZhiguangHailian, I developed a Python algorithm to determine GPS coordinates from textual geographic locations and determine which district it belongs to. At Zhihu Inc., I was heavily involved into data cleaning, especially for creating training and testing set for their Large Language Model. I also had a chance to use that model create application to detect adult contents on their website.\nI also have some academic projects. I’ve worked on projects like the SA Opportunity Atlas under the guidance of Justin Anderson from MIT for my bachelor graduation. Additionally, I researched the application of AI in medical treatment under the mentorship of Dianbo Liu from Harvard University. These projects allowed me to practice a wide range of both frontend and machine learning skills. In terms of programming skills, I am proficient in programming languages Python, Java and Swift. I have experience with web development tools such as .NET, C#, Bootstrap, and Angular JS. My expertise also extends to data analysis with tools like SQL and R, and I am familiar with distributed systems like Apache Hadoop."
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "Code",
+    "section": "",
+    "text": "Here is a code repository of this project in GitHub: Project Repository"
+  },
+  {
+    "objectID": "code.html#code",
+    "href": "code.html#code",
+    "title": "Code",
+    "section": "",
+    "text": "Here is a code representation of this project in GitHub: Project Repository"
+  },
+  {
+    "objectID": "code.html#project-repository",
+    "href": "code.html#project-repository",
+    "title": "Code",
+    "section": "",
+    "text": "Here is a code repository of this project in GitHub: Project Repository"
   }
 ]
