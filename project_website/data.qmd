@@ -2,5 +2,5 @@
 title: "Data"
 ---
 
-## Data
+## Data hosting
 The data used for this project will be host on the Georgetown Domain which can be access here: [data](https://alex045.georgetown.domains/project_data/)

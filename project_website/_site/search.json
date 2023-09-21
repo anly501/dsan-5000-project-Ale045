@@ -9,7 +9,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "project_website",
+    "title": "Protofilio Project",
     "section": "",
     "text": "Welcome to my Protofilio Project website!"
   },
@@ -114,6 +114,13 @@
   {
     "objectID": "data.html#data",
     "href": "data.html#data",
+    "title": "Data",
+    "section": "",
+    "text": "The data used for this project will be host on the Georgetown Domain which can be access here: data"
+  },
+  {
+    "objectID": "data.html#data-hosting",
+    "href": "data.html#data-hosting",
     "title": "Data",
     "section": "",
     "text": "The data used for this project will be host on the Georgetown Domain which can be access here: data"
