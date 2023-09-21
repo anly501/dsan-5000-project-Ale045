@@ -1,0 +1,40 @@
+project:
+  type: website
+
+website:
+  title: "project_website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About Me
+      - href: introduction.qmd
+        text: Introduction
+      - href: data_garther.qmd
+        text: Data Garther
+      - href: data_cleaning.qmd
+        text: Data Cleaning
+      - href: data_exploration.qmd
+        text: Data Exploration
+      - href: clustering.qmd
+        text: Clustering
+      - href: dimensionality_reduction.qmd
+        text: Dimensionality Reduction
+      - href: dicision_tree.qmd
+        text: Decision Tree
+      - href: arm.qmd
+        text: ARM
+      - href: conclusion.qmd
+        text: Conclusion
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+bibliography: references.bib
+
+
+

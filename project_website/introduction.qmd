@@ -1,0 +1,67 @@
+---
+title: "An Analysis of the Trend in Today’s Music Industry"
+author: "Tianze Yang"
+bibliography: references.bib
+---
+## Project Introduction
+Music, arguably invented earlier than language, has been an important part of human civilization. During the years music has been constantly evolving and could be serve as a reflection on the society of its time. The pace of the evolve though, is noticeable accelerated in recent years. With the new technology and the rise of Gen Z as main consumer, nearly every aspect of the industry has changed significantly. New genres such as sped-ups are emerging in a speedy way and streaming service has completely changed the way consumer access to music and hence their consuming behaviors. More powerful AI tools help independent artist to produce quality works, while crossover between music and video and games become a new force due to platform like TikTok. To understand the trend in contemporary music offers not only a great commercial value but also provide us an insight into modern society and this new generation. In this project, we will employ a data driven method to depict the revolution in music industry and try to predict its future.
+
+## Background: Research Works Done in this Field
+Since the great changes in musical industry, extensive researches were done in this realm, offering us the background knowledge and valuable insights. I shall address two important publications here which provide us important background knowledge and insight on understanding today’s music trend. 
+
+#### `Publication-1`: Changing Their Tune: How Consumers’ Adoption of Online Streaming Affects Music Consumption and Discovery
+
+This paper throughly described how the streaming service impact the way music were consumed and user behavior. The author segment the research into three parts, first they identify the increment contribution of streaming service is contributing to the overall music consumption. Secondly, it compare the diversity in the consumers’ choice in music categories between streaming service and traditional ownership model. Finally, it researched what could impact a song’s success in the streaming environment [@datta2018changing]. 
+
+To analysis the effects of adopting streaming service on individual music consumption, they use an anonymous third party service tracking the consumer’s platform preference and their listening behavior to create a panel of data. By applying a difference in differences (DiD) method, the authors compare the consumption differences between the group of people who adopt the streaming service and people who did not. According to their findings, adopting to streaming lead to a 49% increase of music consumption across all the platform. Furthermore listeners in streaming service tend to have a wider spectrum of music choices. The author noted it is benefit to those smaller artist to get attention but it also make the situation more competitive since the listeners now tend to discover new music instead of staying still [@datta2018changing]. 
+
+#### `Publication-2`: Tastes and Age: A Study of the Relationship between Music Tastes and Age Cohorts
+
+In this paper, the author tried to investigate the impact of ages’ influence on individual music preference. The main object is to discover the relationship between then contemporary music taste and age age cohorts [@glevarec2020tastes]. 
+The data they used for research is the ELIPSS inquiry from 2013 conducted by the Centre of Socio-Political Data in Pairs. This enquires include 13 genres of music and with a sample space of 892.  The research methodology employed a regression analysis on the socio-demographic variables including age, education, profession, gender of a person and their taste of music genres.  The finding reveal that for most music genres, age of the listener is the dominate factor to determine whether it will be appreciate or not. It is also noticed that people tend to rate the artist higher when they are at a similar age with the listener. Also, the author went further and point out it can be inferred from the research that people are likely to be linked to an artist they encountered during their teenager [@glevarec2020tastes]. 
+
+#### Other Relevent Works: 
+
+There are many other researches dive into the topic of the contemporary music trends in many perspective to provide us the background of this project. The trend can be split into three aspect, the trend for music content, the trend in music consumption and the trend in music creation.
+
+##### Trend in Music Contents:
+
+In terms of music content, current researches indicating the lyric of the songs are getting simpler and the songs with simple lyrics tend to be more successful [@varnum2021song]. Also, according to research, the lyrics now more likely to contain negative emotions [@brand2019cultural]. This is important to notice since the research done by Borg and Hokkanen shows that lyrics plays an significant role in a music’s success [@borg2011makes]. There are also new genres emerging, Base on the second publication summary above, we can observe the new Z generation is the key audience of those novice genres [@datta2018changing]. According to Klement & Strambach, the local and extra-local knowledge source contribute to those new genres creation [@klement2019new]. 
+
+##### Trend in Music Consumption:
+
+The advent of streaming services has totally revolutionized music consumption as describe in the first publication’s summary. Additionally, changes also reflect on the form music been consumed. Nowadays music is often consume in combine with video or games. An good example is the TikTok. According to study, the more interactive mode in platform like TikTok short video make people foster affliction by mixing the music with image, video and text, and it is also shown as a way to self-express and connect people with similar afflictions [@vizcaino2022music]. 
+
+##### Trend in Music Creation:
+
+There are also revolution in music creations. With more AI assistance tools emerging, even individual without traditional musical training could create songs, however it also means the standard for hit song is increasing [@liu2019everybody]. Also the streaming service like Spotify enable artist to upload their work without the need of signing to a label. However, these technology doesn’t always promote the creation. THOMAS HODGSON described it as ‘Creative Ambivalence’ mainly caused by the opaque nature of recommending algorithm [@hodgson2021spotify]. Artist might spend more time to align their work to the algorithm rather than being creative [@hodgson2021spotify]. 
+
+
+## Research Goal and Hypothesis
+In this project, our aim is to provide a comprehensive, data-driven analysis of contemporary music industry trends and potentially predict its future shifts. We hypothesize that the rise of streaming platforms, have significantly influenced on both music creation and consumption. And the as the Generation Z becoming the main consumer, there would be significant changes regarding the genre, rhythm and lyric of trending music. We also expect to see a trend where individual artist and artists who also from Gen Z are thriving. 
+
+## Data Science Questions
+To test our hypothesis, we shall try to answer these data driven questions:
+
+##### Music Contents:
+1. What are the most popular genres of music today?
+2. How did the popular genres changed over the three decades and is the changing rate faster or not?
+3. Are the songs now more homogenized than before in terms of the rhythm, lyrics and genre?
+4. Has the linguistic diversity in trending music becoming greater or not?
+5. What are genre or artist attract most to Generation Z? 
+
+##### Music Consumption:
+1. Did the consuming behavior shifted  for music listeners compare with before streaming service?
+2. What is the impact of the integration between music and other media type like game and videos?
+3. To what extent has the music industry been impacted by the Covid?
+4. Are there any common traits for those songs been made into a Sped-up remixes?
+5. About the listeners of different genres or rhythms, are they highly clustered in some trait?
+
+
+##### Music Creation:
+1. Is it easier now to gain fame as an independent artist since AI tools make it easier to produce high quality music?
+2. Has there been a noticeable trend in artists archive fame younger than before?
+
+
+
+
