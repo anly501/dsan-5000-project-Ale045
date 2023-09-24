@@ -31,6 +31,7 @@ billboard.2022.features <- get_track_audio_features(billboard.2022$track.id)
 billboard.2022.features.df <- as.data.frame(billboard.2022.features)
 
 billboard.2022.features.df$artist_ids <- artist_ids_vector
+billboard.2022.features.df$track_name <- billboard.2022$track.name
 
 # global_top_50_audio_features_df <- rbind(gloabl_top_50_audio_features_df, artist_info)
 

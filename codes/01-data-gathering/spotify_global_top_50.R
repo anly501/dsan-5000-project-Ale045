@@ -37,6 +37,7 @@ global_top_50_audio_features <- get_track_audio_features(global_top_50$track.id)
 gloabl_top_50_audio_features_df <- as.data.frame(global_top_50_audio_features)
 
 gloabl_top_50_audio_features_df$artist_ids <- artist_ids_vector
+gloabl_top_50_audio_features_df$track_name <- global_top_50$track.name
 
 # global_top_50_audio_features_df <- rbind(gloabl_top_50_audio_features_df, artist_info)
 
