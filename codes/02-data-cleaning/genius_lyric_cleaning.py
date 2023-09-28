@@ -32,12 +32,13 @@ vectorizer = CountVectorizer(stop_words='english', min_df=3, token_pattern=r'\b[
 X = vectorizer.fit_transform(df_lyrics_all['lyrics'])
 df_bag = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
 
-
+df_lyrics_all = df_lyrics_all.reset_index(drop=True)
+df_bag.reset_index(drop=True)
 df_lyrics_all = pd.concat([df_lyrics_all, df_bag], axis=1)
+
 
 # Drop the lyrics column
 df_lyrics_all.drop(columns=['lyrics'], inplace=True)
-
 
 
 # Write the data in a csv file
