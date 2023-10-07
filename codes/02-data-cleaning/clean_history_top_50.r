@@ -62,5 +62,17 @@ df_count <- df_track %>%
   group_by(genre) %>%
   summarise(count = n())
 print(df_count)
+
+# Bining the ages into 2 groups
+df_track$year_group <- cut(df_track$year, breaks = c(2009, 2015, 2020), labels = c("2010-2014", "2015-2019"))
+
+
+# Check the rows number in each groups
+df_count_group <- df_track %>%
+  group_by(year_group) %>%
+  summarise(count = n())
+print(df_count_group)
+
+
 # Write the cleaned data to csv file
 write.csv(df_track, "../../data/01-modified-data/top50MusicFrom2010-2019_cleaned.csv", row.names = FALSE)
