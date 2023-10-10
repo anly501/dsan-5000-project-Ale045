@@ -2,10 +2,8 @@ library(spotifyr)
 library(plotly)
 library(ggplot2)
 library(knitr)
-
-
-# Sys.setenv(SPOTIFY_CLIENT_ID = "935e32cddf4943569b6b462f875926a8")
-# Sys.setenv(SPOTIFY_CLIENT_SECRET = "482acfd3be254aeb9ec6a2ca6adb8d09")
+# use the current working directory of the active document
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # Get token
 access_token <- get_spotify_access_token()

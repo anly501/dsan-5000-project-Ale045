@@ -3,7 +3,8 @@ library(plotly)
 library(ggplot2)
 library(knitr)
 
-
+# use the current working directory of the active document
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # Get token
 access_token <- get_spotify_access_token()
