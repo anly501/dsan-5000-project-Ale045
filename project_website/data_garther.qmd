@@ -8,3 +8,205 @@ format:
 
 ## API Data Gathering
 
+### Method
+In this project's data collection phase, I will utilize an API to gather recently generated data, enhancing our ability to analyze current trends. For data that is older or unavailable through the API, I will search for already done datasets on the internet and incorporate them into this project by downloading them.
+
+### Downloading Data
+
+#### Trending Music in the last decade
+
+To gain insights into how the trend has evolved over the past decades, I require some historical data. Retrieving this data from the API is a bit challenging. I will need to structure the chart to encompass the changes over these decades. Fortunately, there are available datasets on the internet due to the historical nature of the data. I have downloaded information about trending music over the past decade from the following link [Top 50 Spotify music dataset (from 2010 to 2019 )](https://gist.github.com/rioto9858/ff72b72b3bf5754d29dd1ebf898fc893) The data it collected is base on Spotify audio feature API.
+
+Dataset Name : `top50MusicFrom2010-2019.csv`
+
+Basic Information:
+
+
+| Column Name | Non-Null Count | Dtype |
+| ------ | -------------- | ----- |
+| title | 603 non-null | object |
+| artist | 603 non-null | object |
+| the genre of the track | 603 non-null | object |
+| year | 603 non-null | int64 |
+| Beats.Per.Minute -The tempo of the song | 603 non-null | int64 |
+| Energy- The energy of a song - the higher the value, the more energtic | 603 non-null | int64 |
+| Danceability - The higher the value, the easier it is to dance to this song | 603 non-null | int64 |
+| Loudness/dB - The higher the value, the louder the song | 603 non-null | int64 |
+| Liveness - The higher the value, the more likely the song is a live recording | 603 non-null | int64 |
+| Valence - The higher the value, the more positive mood for the song | 603 non-null | int64 |
+| Length - The duration of the song | 603 non-null | int64 |
+| Acousticness - The higher the value the more acoustic the song is | 603 non-null | int64 |
+| Speechiness - The higher the value the more spoken word the song contains | 603 non-null | int64 |
+| Popularity- The higher the value the more popular the song is | 603 non-null | int64 |
+
+: total 14 columns, 603 rows
+
+A sample of the dataset:
+
+![](./images/historic_top50.png)  
+
+
+#### Trending Music on TikTok
+
+The TikTok Developer API has stringent application requirements that I couldn't fulfill. Consequently, I opted to obtain data on trending music from TikTok through this link [TikTok Trending Tracks](https://www.kaggle.com/datasets/yamqwe/tiktok-trending-tracks) This dataset comprises 263 trending songs on TikTok in the year 2022. Each song's information was sourced from Spotify, enabling consistant analysis alongside the data collected using the Spotify API.
+
+Dataset Name : `TikTok_songs_2022.csv`
+Basic Information:
+
+| Column            | Non-Null Count | Dtype    |
+| ----------------- | -------------- | -------- |
+| track_name        | 263 non-null   | object   |
+| artist_name       | 263 non-null   | object   |
+| artist_pop        | 263 non-null   | int64    |
+| album             | 263 non-null   | object   |
+| track_pop         | 263 non-null   | int64    |
+| danceability      | 263 non-null   | float64  |
+| energy            | 263 non-null   | float64  |
+| loudness          | 263 non-null   | float64  |
+| mode              | 263 non-null   | int64    |
+| key               | 263 non-null   | int64    |
+| speechiness       | 263 non-null   | float64  |
+| acousticness      | 263 non-null   | float64  |
+| instrumentalness  | 263 non-null   | float64  |
+| liveness          | 263 non-null   | float64  |
+| valence           | 263 non-null   | float64  |
+| tempo             | 263 non-null   | float64  |
+| time_signature    | 263 non-null   | int64    |
+| duration_ms       | 263 non-null   | int64    |
+
+: total 14 columns, 603 rows
+
+A sample of the dataset:
+
+![](./images/tik_tok_trend.png)  
+
+
+#### Data on Last.fm
+
+I also required data to analyze user behaviors in order to gain insights how the musics are consumed. However, user data is often confidential and not disclosed to public. To address this, I discovered an open dataset about last.fm users listening events, which includes some anonymized user personal information. The link for this dataset is [LFM-2b Dataset](http://www.cp.jku.at/datasets/LFM-2b/). This dataset comprises three key components:
+
+The first component consists of three TSV files.
+
+::: {} 
+1. One file contains anonymized user personal information such as gender and age.
+2. The second file stores track information, including track ID and artist names.
+3. The third file contains details about listening events, listing each user event, including the timestamp, the user who listened to the music, and the specific track they played.
+:::
+
+Some of the dataset are quite messy and unable to be read directly using pandas with mix sepeartors. So I could only show the samples of the datastes here.
+
+Dataset Name : `users.tsv`
+
+Sample of the dataset:
+![](./images/users.png)
+
+Dataset Name : `tracks.tsv`
+
+Sample of the dataset:
+
+![](./images/tracks.png)
+
+Dataset Name : `listening_events.tsv`
+
+Sample of the dataset:
+
+![](./images/listening_evnets.png)
+
+
+### API Data Gathering
+
+#### More recent trending music using Spotify API
+
+To gain a complete understanding of recent developments in the music industry and to address the more recently produced trending musics, I initiated the project by collecting data on today's trending songs. For this purpose, I employed the Spotify API to gather music information from sources such as the 'U.S. Top Fifty' playlist [insert link], the Billboard Top 100, and the Billboard chart for the year 2022. The three dataset are in the same format, so I will only show the sample of one of them for the sake of brevity.
+
+Dataset Name : `billboard_features.csv`
+
+Basic information:
+
+| Column            | Non-Null Count | Dtype    |
+| ----------------- | -------------- | -------- |
+| Unnamed: 0        | 100 non-null   | int64    |
+| danceability      | 100 non-null   | float64  |
+| energy            | 100 non-null   | float64  |
+| key               | 100 non-null   | int64    |
+| loudness          | 100 non-null   | float64  |
+| mode              | 100 non-null   | int64    |
+| speechiness       | 100 non-null   | float64  |
+| acousticness      | 100 non-null   | float64  |
+| instrumentalness  | 100 non-null   | float64  |
+| liveness          | 100 non-null   | float64  |
+| valence           | 100 non-null   | float64  |
+| tempo             | 100 non-null   | float64  |
+| type              | 100 non-null   | object   |
+| id                | 100 non-null   | object   |
+| uri               | 100 non-null   | object   |
+| track_href        | 100 non-null   | object   |
+| analysis_url      | 100 non-null   | object   |
+| duration_ms       | 100 non-null   | int64    |
+| time_signature    | 100 non-null   | int64    |
+| artist_ids        | 100 non-null   | object   |
+| track_name        | 100 non-null   | object   |
+
+: total 21 columns, 100 rows
+
+A sample of the dataset:
+
+![](./images/billboard.png)
+
+
+#### Muisc lyrics using Genius API
+
+Another crucial aspect in this project is the lyric of the songs which Spotify does not provide. To address this, I used Genius API to obtain the lyrics data. Specifically, I utilized the 'lyricsgenius' package in Python to fetch the lyrics for each song by their names. I fetched the lyrcis for each songs in the dataset above, so there will be three lyrics dataset which follows the same format. I will only show the sample of one of them for the sake of brevity.
+
+Dataset Name : `genius_lyrics`
+
+Basic information:
+
+| Column   | Non-Null Count | Dtype  |
+| -------- | -------------- | ------ |
+| track_id | 100 non-null   | object |
+| name     | 100 non-null   | object |
+| lyrics   | 100 non-null   | object |
+
+: total 3 columns, 100 rows
+
+A sample of the dataset:
+
+![](./images/lyrics.png)
+
+#### Audio feature for last.fm tracks
+
+The last.fm data, as mentioned in the previous section, provided valuable user information and activity data. However, the track data lacked audio analytical factors, consisting only of artist and track names, which is unable to conduct any meaningful analysis. To complement this, I utilized the Spotify API to search for and retrieve audio features for the music. The resulting dataset is stored in a JSON file. My plan was to collect the top 10,000 songs' audio feature it is still under the process of collecting becasue Spotify API does have a rate limit, so it takes time to collect all the data. For now, the dataset only consist part of it, but the format is finalized. 
+
+Dataset Name : `sample_track_info.json`
+
+Basic information:
+
+| Column            | Non-Null Count | Dtype    |
+| ----------------- | -------------- | -------- |
+| danceability      | 5700 non-null  | float64  |
+| energy            | 5700 non-null  | float64  |
+| key               | 5700 non-null  | int64    |
+| loudness          | 5700 non-null  | float64  |
+| mode              | 5700 non-null  | int64    |
+| speechiness       | 5700 non-null  | float64  |
+| acousticness      | 5700 non-null  | float64  |
+| instrumentalness  | 5700 non-null  | float64  |
+| liveness          | 5700 non-null  | float64  |
+| valence           | 5700 non-null  | float64  |
+| tempo             | 5700 non-null  | float64  |
+| type              | 5700 non-null  | object   |
+| id                | 5700 non-null  | object   |
+| uri               | 5700 non-null  | object   |
+| track_href        | 5700 non-null  | object   |
+| analysis_url      | 5700 non-null  | object   |
+| duration_ms       | 5700 non-null  | int64    |
+| time_signature    | 5700 non-null  | int64    |
+| track_id          | 5700 non-null  | int64    |
+
+: total 19 columns, 5700 rows
+
+
+A sample of the dataset:
+
+![](./images/track_info.png)
