@@ -5,3 +5,294 @@ format:
         toc: true
         embed-resources: true
 ---
+
+### Cleaning Spotify data of current trending songs:
+
+::: {} 
+
+1. First I merge the data from three files (`global_top_50.csv`, `billboard_features.csv`, `billboard_2022_features.csv`) containing recent trending music in Spotify. Because they have the same format, I just need to combine them into a data frame.
+2. There are a lot of not useful colums containing various urls as shown in the picture below. Drop the unnecessary columns like time_signature, analysis_url, track_href… to lower the data dimension. 
+Before cleaning the columns looks like this:
+![before](./images/col_spotify_before.png)
+After cleaning, noticed all the url columns are gone:
+![after](./images/col_spotify_after.png)
+
+3. Check if there are any missing values, in this case, the dataset does not contain any, like the picture below:
+![missing](./images/spotify_missing_value.png)
+4. In some case there are multipy artists for For the case where a track contain more than one artiest, just leave the prominent one to keep constant with other datasets.
+
+    An example of multiple artists (the red words are the artist ids):
+    ![more than one artists](./images/multiply_artists.png)
+
+5. Since we are concern about the genre information for each song, add genre column which get data from the artist dataset, using the genre information from the artist dataset `spotify_artist.csv`. 
+
+    Columns after adding genre information:
+    ![genre](./images/genre_column.png)
+
+A sample of the cleaned dataset:
+
+![sample](./images/cleaned_spotify.png)
+
+Link to the cleaned dataset: [spotify_current_all.csv](https://alex045.georgetown.domains/project_data/01-modified-data/spotify_current_all.csv)
+
+
+
+:::
+
+
+### Clean historical trending musics:
+
+::: {}
+1. First, I noticed the column name is too redundancy, so I changed them so they are easier to retrieve and also consistent with the previous contemporary music data. 
+
+    Column names Before cleaning:
+    ![before](./images/historic_colname_before.png)
+    After cleaning:
+    ![after](./images/historic_colname_after.png)
+
+2. Check if there are any missing values, in this case, there are no missing values
+    ![missing](./images/historic_missing_value.png)
+
+3. Drop the 'liveness' column because it is not relevant to the music itself. 
+
+    Columns after dropping the 'liveness' column:
+    ![liveness](./images/historic_column_final.png)
+4. There are too many genres in this dataset like shown in the picture below. To make it better for analysis, I map each specific genre using regular expression and hard code mapping.
+    
+    Before mapping:
+    ![before](./images/historic_genre_before.png)
+    After mapping:
+
+    ![after](./images/historic_genre_after.png)
+
+5. Create a year binning over the year column. Make the bin width of 5 years. 
+    
+    Before binning, the year column is like this, just separate years indicate the year of the song:
+
+    ` $ year        : num [1:603] 2010 2010 2010 2010 2010 2010 2010 2010 2010 2010 ...`
+    After bining, the years is turned to two groups, like shown in the picture below:
+
+    ![after](./images/historic_year_after.png)
+
+Here is a sample of the cleaned dataset:
+![sample](./images/historic_data_after.png) 
+
+Link to the cleaned dataset: [top50MusicFrom2010-2019_cleaned.csv](https://alex045.georgetown.domains/project_data/01-modified-data/top50MusicFrom2010-2019_cleaned.csv)
+:::
+
+
+### Clean the artist dataset:
+
+::: {}
+1. There are too many not useful columns like various urls so drop them first. Also, each artist has 8 columns of genre, to keep it consistent with other datasets, drop the genre columns and only keep the priority genre. However, the priority genre is either stored in the `genres1` column or the `genres` column, depending on how many genres the artist have, so here I only drop the `genres2` to `genres8` columns.
+    
+    Column names before dropping:
+
+    ![before](./images/artist_column_before.png)
+    Columns after dropping:
+
+    ![after](./images/artist_column_after.png)
+
+2. Combine the `genre1` column and `genre` column to create the final genre column for each artist.
+    
+    Before cleaning (the green and red colored words are the genres, this only shows a part of the genres since it got 8 columns of genre for each artist):
+    
+    ![before](./images/artist_genre_before.png)
+    After cleaning:
+    
+    ![after](./images/artist_genre_after.png)
+
+3. It can be observe from the previous picture a lot of artist has no genre information. Fill these missing values in the genre field using the word ‘undefined’.
+
+    After filling the missing values:
+
+    ![after](./images/artist_missing_after.png)
+4. Map the specific genre to a broader genre to reduce the number of genres. This step was done similarly to the last dataset. 
+    
+    Before mapping (there are 75 genres in total, here I onnly shows a part of them):
+    
+    ![before](./images/artist_genre_total.png)
+    After mapping:
+    
+    ![after](./images/artist_genre_reduced.png)
+
+Here is a sample of the cleaned dataset:
+
+![](./images/artist_cleaned.png)
+
+Link to the cleaned dataset: [spotify_artist.csv](https://alex045.georgetown.domains/project_data/01-modified-data/spotify_artist.csv)
+:::
+
+### Clean lyrics dataset:
+
+::: {}
+1. Merge all the lyrics dataset (`genius_lyrics_2022.csv`, `genius_lyrics_global.csv`, `genius_lyrics.csv`) into one data frame. 
+
+2. By checking, there are duplicates exists, dropping all the duplicates, since there are duplicates in different trending list. 
+    Print the duplicates rows before dropping:
+    ![before](./images/lyrics_duplicate.png)
+    After dropping duplicates, use `df.duplicated().sum()` to check if there are any duplicates, the result should be 0.
+    
+3. Drop the rows with missing lyrics, since it will serve no use in analysis. 
+
+    Before dropping:
+    ![before](./images/lyrics_missing_value.png)
+    
+    After dropping, use `df.isnull().sum()` to check if there are any missing values, the result should be 0.
+
+4. Remove the indication or introduction before each song’s lyric using regular expression. 
+    
+    Before removing:
+
+    ![before](./images/lyric_prefix_before.png)
+
+    After removing (notice the [chours] and [verse] are gone, also the lyric's information like contributors is removed as well):
+
+    ![after](./images/lyric_prefix_after.png)
+
+5. Remove all the unprintable and puncuation and non-English characters since it will not be used in the analysis. 
+
+    Before removing:
+    
+    ![before](./images/lryrics_before.png)
+
+    After removing(notice the lyric only contains non-English characters are now empty):
+
+    ![](./images/lyric_after.png)
+    
+    In this picture, we can see all the punctuations are gone:
+    ![after](./images/lyrics_after_puncuation.png)
+
+6. Drop all the new empty rows using `df.dropna()`. 
+
+7. Create a bag of word from the lyrics column using CountVectorizer and use `stop_words='english'` parameter to remove the stop words and drop the original lyric column.
+
+Here is a sample of the cleaned dataset:
+        
+![](./images/lyrics_bag_of_words.png)
+
+Link to the cleaned dataset: [genius_lyrics_cleaned](https://alex045.georgetown.domains/project_data/01-modified-data/genius_lyrics_cleaned.csv)
+
+
+:::
+
+
+### Cleaning TikTok dataset
+
+::: {}
+1. Check for missing value using `df.isnull().sum()`, there are no missing values in this dataset as shown in the picture below:
+    
+    ![missing](./images/tiktok_missing_value.png)
+
+2. Check for duplicate value using `duplicates = df_[df_tik.duplicated()]`, it will return a empty dataframe, showing there are no duplicates in this dataset.
+
+3. Drop not useful columns, album name and artist popularity. 
+    
+    Before dropping:
+    
+    ![before](./images/tik_tok_column_before.png)
+    
+    After dropping, notice the colums dropped are gone:
+    
+    ![after](./images/tiktok_column_after.png)
+Rename the columns for better data retrieval. 
+    After rename the colums, the columns names are like this:
+
+    ![after](./images/tiktok_column_rename.png)
+
+Here is a sample of the cleaned dataset:
+
+![](./images/tiktok_cleaned.png)   
+
+Link to the cleaned dataset: [tiktok_cleaned.csv](https://alex045.georgetown.domains/project_data/01-modified-data/tik_tok_cleaned.csv)
+:::
+
+
+### Clean last.fm listening events dataset
+
+::: {}
+1. The listening events in the dataset are too many, 30,357,786 columns in total, which could cause trouble in analysis. So here we only randomly sample 10000 listening events from the dataset (This is just an initial decision, it could chagne as the analysis went on)
+
+2. The columns in the dataset are squashed into one column, so i need to split it by the separator '\t'.
+    
+    Before splitting:
+        
+    ![before](./images/event_before_split.png)
+        
+    After splitting, notice the columns are now separated into four columns:
+    
+    ![after](./images/event_after_split.png)
+
+3. Check if there are any missing values in the sample dataset using `colSums(is.na(df))`, in this case there are no missing values in the sample dataset.
+
+
+Here is a sample of the cleaned dataset:
+
+![](./images/event_cleaned.png)
+
+Link to the cleaned dataset: [listening_events_sample.csv](https://alex045.georgetown.domains/project_data/01-modified-data/last.fm.data/listening_events_sample.csv)
+:::
+
+
+### Clean last.fm track datasets
+
+::: {}
+
+1. The data itself is encode in tsv format, but the separator is not consistent where sometime it is tab and sometimes it is spaces. So it is impossible to read directly using pandas. First, I read the file as plain text and change all the separator to comma, then save the result as a .csv file. 
+
+    Before changing the separator:
+    ![before](./images/tracks_before.png)
+
+    After changing the separator and save as .csv file:
+
+    ![after](./images/tracks_after_csv.png)
+
+
+2. There are a lot of columns in the track name are clearly unreadable, consisting of ‘!’ Or simply dots and white spaces or something like Remove all the columns only consist with these with regular expression. 
+    
+    Before removing:
+    ![before](./images/tracks_before.png)
+    After removing (notice the meaningless columns are turned to NA):
+    ![after](./images/track_name_after_clean.png)
+
+3. Drop all the rows with missing values and unprintable vlaues and write the cleaned dataset to a new csv file. 
+
+A sample of the cleaned dataset:
+
+![](./images/tracks_cleaned.png)
+
+Link to the cleaned dataset: [tracks_cleaned.csv](https://alex045.georgetown.domains/project_data/01-modified-data/last.fm.data/tracks_cleaned.csv)
+
+:::
+
+
+### Clean last.fm user dataset
+
+::: {}
+1. Plenty of users’s country information is missing, I replace all the empty value using the word ‘unknown’
+        
+    Data before cleaning:
+    ![before](./images/users_beofre.png)
+
+2. It is worth noticing that there are a lot of -1 ages in this dataset. It consists of 0.3% of the data. With so much missing value, whether chaning to the mean or media will introduce huge change to the variance of the data (variance dropping 23 if using media, more if using mean). So I decided the replacing of the missing value need to be done after more analysis in the next stage.
+
+3. Also from the distribution we can see that there are very few data has age over 80, so remove them as well. This is about 0.03% of the data. 
+
+
+    Here is the distribution of the age in the dataset:
+    ![distribution](./images/age_distribution.png)
+    
+4. Using bine to create a 5 years range bin in the age values for better analysis. 
+    
+    Before binning, the frequency of the age is like this:
+    ![before](./images/age_freq.png)
+
+    After binning:
+    ![after](./images/age_bin.png)
+
+Here is a sample of the cleaned dataset:
+
+![](./images/user_cleaned_1.png)
+
+Link to the cleaned dataset: [users_cleaned.csv](https://alex045.georgetown.domains/project_data/01-modified-data/last.fm.data/users_cleaned.csv)
+:::

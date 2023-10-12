@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
+import string
 
 # read in the data
 df_lyrics = pd.read_csv('../../data/00-raw-data/genius_lyrics.csv')
@@ -22,13 +23,18 @@ print(df_lyrics_all.isnull().sum())
 # Drop rows with missing values
 df_lyrics_all.dropna(inplace=True)
 
+# Remove the first line of the lyrics
+df_lyrics_all['lyrics'] = df_lyrics_all['lyrics'].str.replace(r'^.*\n', '', regex=True)
 # Remove indication words
 df_lyrics_all['lyrics'] = df_lyrics_all['lyrics'].str.replace(r'\[.*\]', ',', regex=True)
-# Leave only printable characters
+# Remove all the punctuation
+df_lyrics_all['lyrics'] = df_lyrics_all['lyrics'].str.lower().str.strip(string.punctuation)
+# Leave only printable and English characters 
 df_lyrics_all['lyrics'] = df_lyrics_all['lyrics'].str.replace(r'[^\x20-\x7E]+', '', regex=True)
+df_lyrics_all['lyrics'] = df_lyrics_all['lyrics'].apply(lambda x: ''.join(c for c in x if c.isprintable() and c.isalpha() or c.isspace()))
 
 # Turn the lyrcis into a bag of words and remove the stop words
-vectorizer = CountVectorizer(stop_words='english', min_df=3, token_pattern=r'\b[^\d\W]+\b')
+vectorizer = CountVectorizer(stop_words='english', min_df=3)
 X = vectorizer.fit_transform(df_lyrics_all['lyrics'])
 df_bag = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
 

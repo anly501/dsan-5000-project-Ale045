@@ -18,8 +18,9 @@ str(df_track)
 
 # Drop the unnecessary columns
 df_track <- df_track %>%
-  select(-c("liveness", "acousticness"))
+  select(-c("liveness"))
 
+print(colnames(df_track))
 # Reduce the number of genres
 df_track$genre <- gsub("^(.*hip hop.*)$", "hip_hop", df_track$genre)
 df_track$genre <- gsub("^(.*rap.*)$", "hip_hop", df_track$genre)
@@ -63,7 +64,7 @@ df_count <- df_track %>%
   summarise(count = n())
 print(df_count)
 
-# Bining the ages into 2 groups
+# Bining the year into 2 groups
 df_track$year_group <- cut(df_track$year, breaks = c(2009, 2015, 2020), labels = c("2010-2014", "2015-2019"))
 
 

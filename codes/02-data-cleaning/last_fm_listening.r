@@ -22,6 +22,6 @@ print(head(df_event))
 df_event <- df_event %>%
   separate(`user_id\ttrack_id\talbum_id\ttimestamp`, into = c("user_id", "track_id", "album_id", "timestamp"), sep = "\t")
 
-
+print(head(df_event))
 # Write to the csv file
 write.csv(df_event, "../../data/01-modified-data/last.fm.data/listening_events_sample.csv", row.names = FALSE)

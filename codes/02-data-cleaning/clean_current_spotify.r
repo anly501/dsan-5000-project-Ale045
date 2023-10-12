@@ -39,5 +39,6 @@ df_all$artist_ids <- sapply(df_all$artist_ids, function(x) strsplit(x, ",")[[1]]
 df_all <- left_join(df_all, df_aritist, by = "artist_ids") %>%
   select(-followers.total, -genre)
 
+print(colnames(df_all))
 # Write the cleaned data to csv file
 write.csv(df_all, "../../data/01-modified-data/spotify_current_all.csv", row.names = FALSE)

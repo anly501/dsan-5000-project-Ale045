@@ -14,7 +14,7 @@ print(colSums(is.na(df_event)))
 print(nrow(df_event))
 
 # Turn the track_name start with ! to NA
-df_event$track <- gsub("^!.*", NA, df_event$track)
+df_event$track <- gsub("^[!.[:space:]]+", NA, df_event$track)
 
 # Drop the rows with missing track
 print(colSums(is.na(df_event)))

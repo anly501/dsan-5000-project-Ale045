@@ -34,8 +34,11 @@ print(colSums(is.na(df_user)))
 mask <- df_user$age != -1
 hist(df_user$age[mask], main = "Distribution of Age", xlab = "Age", col = "lightblue")
 
+
 # Replace the -1 age with median
-df_user$age[!mask] <- median(df_user$age[mask])
+# df_user$age[!mask] <- median(df_user$age[mask])
+
+
 
 # remove the age over 80
 df_user <- df_user %>%

@@ -26,21 +26,38 @@ done_1 = []
 with open('../../data/log.txt', 'r') as f:
     done = [line.strip() for line in f.readlines()]
 
+def get_access_token():
 
+    client_creds = f'{client_id}:{client_secret}'
+    client_creds_b64 = base64.b64encode(client_creds.encode())
 
-# Replace 'your_access_token' with the token you get from Spotify API
-access_token = 'BQCH-VQ4gUNx8cM9cnQK44PNNKECmcfoG7p55ngsbaWcnoipuwV-9TeAn5NIYQGF75GDJrzMt6AjC-_D9pKE_gtyXuIwQnhOYMps3d-TF28eAa7QyeQ'
+    token_url = 'https://accounts.spotify.com/api/token'
+    token_headers = {
+        'Authorization': f'Basic {client_creds_b64.decode()}'
+    }
+    token_data = {
+        'grant_type': 'client_credentials'
+    }
+
+    # Send the POST request to get the access token
+    response = requests.post(token_url, headers=token_headers, data=token_data)
+
+    # get the access token from the response
+    access_token = response.json()['access_token']
+
+    return access_token
+
+access_token = get_access_token()
 
 def get_track_info(track_name, artist_name, access_token):
     headers = {
     'Authorization': f'Bearer {access_token}',
 }
 
-    # Replace with the artist and track name you're interested in
+    # Replace the space with +
     artist_name = artist_name.replace(' ', '+')
     track_name = track_name.replace(' ', '+')
 
-    # Step 1: Search for the track_id using artist name and track name
     search_url = 'https://api.spotify.com/v1/search'
     search_params = {
         'q': f'track%3A%22{track_name}%22+artist%3A{artist_name}&offset=0&limit=20',
@@ -60,7 +77,6 @@ def get_track_info(track_name, artist_name, access_token):
         print(f"Search failed: {response.status_code}, {response.reason}")
         track_id = None
 
-    # Step 2: Get detailed information about the track using track_id
     if track_id:
         track_url = f'https://api.spotify.com/v1/audio-features/{track_id}'
         response = requests.get(track_url, headers=headers)

@@ -9,8 +9,7 @@ library(purrr)
 # use the current working directory of the active document
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-# Sys.setenv(SPOTIFY_CLIENT_ID = "935e32cddf4943569b6b462f875926a8")
-# Sys.setenv(SPOTIFY_CLIENT_SECRET = "482acfd3be254aeb9ec6a2ca6adb8d09")
+
 
 data_global <- read.csv("../../data/00-raw-data/global_top_50.csv")
 data_billbord <- read.csv("../../data/00-raw-data/billboard_features.csv")

@@ -45,12 +45,15 @@ A sample of the dataset:
 
 ![](./images/historic_top50.png)  
 
+Link to the dataset: [top50MusicFrom2010-2019.csv](https://alex045.georgetown.domains/project_data/00-raw-data/global_top_50.csv)
+
 
 #### Trending Music on TikTok
 
 The TikTok Developer API has stringent application requirements that I couldn't fulfill. Consequently, I opted to obtain data on trending music from TikTok through this link [TikTok Trending Tracks](https://www.kaggle.com/datasets/yamqwe/tiktok-trending-tracks) This dataset comprises 263 trending songs on TikTok in the year 2022. Each song's information was sourced from Spotify, enabling consistant analysis alongside the data collected using the Spotify API.
 
 Dataset Name : `TikTok_songs_2022.csv`
+
 Basic Information:
 
 | Column            | Non-Null Count | Dtype    |
@@ -80,6 +83,8 @@ A sample of the dataset:
 
 ![](./images/tik_tok_trend.png)  
 
+Link to the dataset: [TikTok_songs_2022.csv](https://alex045.georgetown.domains/project_data/00-raw-data/TikTok_songs_2022.csv)
+
 
 #### Data on Last.fm
 
@@ -100,11 +105,15 @@ Dataset Name : `users.tsv`
 Sample of the dataset:
 ![](./images/users.png)
 
+Link to the dataset: [users.tsv](https://alex045.georgetown.domains/project_data/00-raw-data/last.fm.data/users.tsv)
+
 Dataset Name : `tracks.tsv`
 
 Sample of the dataset:
 
 ![](./images/tracks.png)
+
+Link to the dataset: [tracks.tsv](https://alex045.georgetown.domains/project_data/00-raw-data/last.fm.data/tracks.tsv)
 
 Dataset Name : `listening_events.tsv`
 
@@ -112,12 +121,17 @@ Sample of the dataset:
 
 ![](./images/listening_evnets.png)
 
+Link to the dataset: [listening_events.tsv](https://alex045.georgetown.domains/project_data/00-raw-data/last.fm.data/listening_events.tsv)
+
 
 ### API Data Gathering
 
 #### More recent trending music using Spotify API
 
-To gain a complete understanding of recent developments in the music industry and to address the more recently produced trending musics, I initiated the project by collecting data on today's trending songs. For this purpose, I employed the Spotify API to gather music information from sources such as the 'U.S. Top Fifty' playlist [insert link], the Billboard Top 100, and the Billboard chart for the year 2022. The three dataset are in the same format, so I will only show the sample of one of them for the sake of brevity.
+To gain a complete understanding of recent developments in the music industry and to address the more recently produced trending musics, I initiated the project by collecting data on today's trending songs. For this purpose, I employed the Spotify API to gather music information from sources such as the 'U.S. Top Fifty' playlist, the Billboard Top 100, and the Billboard chart for the year 2022. The three dataset are in the same format, so I will only show the sample of one of them for the sake of brevity.
+
+API Endpoint for this sample: `https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ/tracks`
+
 
 Dataset Name : `billboard_features.csv`
 
@@ -153,6 +167,8 @@ A sample of the dataset:
 
 ![](./images/billboard.png)
 
+Link to the dataset: [billboard_features.csv](https://alex045.georgetown.domains/project_data/00-raw-data/billboard_features.csv)
+
 
 #### Muisc lyrics using Genius API
 
@@ -174,11 +190,17 @@ A sample of the dataset:
 
 ![](./images/lyrics.png)
 
+Link to the dataset: [genius_lyrics.csv](https://alex045.georgetown.domains/project_data/00-raw-data/genius_lyrics.csv)
+
 #### Audio feature for last.fm tracks
 
 The last.fm data, as mentioned in the previous section, provided valuable user information and activity data. However, the track data lacked audio analytical factors, consisting only of artist and track names, which is unable to conduct any meaningful analysis. To complement this, I utilized the Spotify API to search for and retrieve audio features for the music. The resulting dataset is stored in a JSON file. My plan was to collect the top 10,000 songs' audio feature it is still under the process of collecting becasue Spotify API does have a rate limit, so it takes time to collect all the data. For now, the dataset only consist part of it, but the format is finalized. 
 
 Dataset Name : `sample_track_info.json`
+
+API Endpoint for searching track id: `https://api.spotify.com/v1/search/track:{track_name}%20artist:{artist_name}` 
+
+API Endpoint for getting the audio feature: `https://api.spotify.com/v1/audio-features/{track_id}`
 
 Basic information:
 
@@ -210,3 +232,5 @@ Basic information:
 A sample of the dataset:
 
 ![](./images/track_info.png)
+
+Link to the dataset: [sample_track_info.json](https://alex045.georgetown.domains/project_data/00-raw-data/last.fm.data/sample_track_info.json)

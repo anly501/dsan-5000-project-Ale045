@@ -15,7 +15,7 @@ names_2022 = df_billboard_2022['track_name'].values
 names_global = df_global['track_name'].values
 # track_id = df_billboard['id'].values
 
-genius = lg.Genius("-oIUp9eDL9VOXcgW-H7Npt071eCMCjf3jb_fUm_3k5_UzEVf0S-gAL5uKHwgVIK6")
+genius = lg.Genius(access_token)
 
 
 def get_lyrics(songList):
