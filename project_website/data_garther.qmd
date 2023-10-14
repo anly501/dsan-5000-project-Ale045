@@ -139,7 +139,6 @@ Basic information:
 
 | Column            | Non-Null Count | Dtype    |
 | ----------------- | -------------- | -------- |
-| Unnamed: 0        | 100 non-null   | int64    |
 | danceability      | 100 non-null   | float64  |
 | energy            | 100 non-null   | float64  |
 | key               | 100 non-null   | int64    |
