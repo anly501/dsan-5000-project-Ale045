@@ -42,7 +42,7 @@ There are also revolution in music creations. With more AI assistance tools emer
 
 
 ## Research Goal and Hypothesis
-In this project, our aim is to provide a comprehensive, data-driven analysis of contemporary music industry trends and potentially predict its future shifts. We hypothesize that the rise of streaming platforms, have significantly influenced on both music creation and consumption. And the as the Generation Z becoming the main consumer, there would be significant changes regarding the genre, rhythm and lyric of trending music. We also expect to see a trend where individual artist and artists who also from Gen Z are thriving. 
+In this project, our aim is to provide a comprehensive, data-driven analysis of contemporary music industry trends and potentially predict its future shifts. We hypothesize that the as the Generation Z becoming the main consumer, there would be significant changes regarding the genre, rhythm and lyric of trending music. We also expect to see a trend where individual artist and artists who also from Gen Z are thriving. 
 
 ## Data Science Questions
 To test our hypothesis, we shall try to answer these data driven questions:

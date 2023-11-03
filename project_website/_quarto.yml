@@ -19,7 +19,7 @@ website:
         text: Data Garther
       - href: data_cleaning.qmd
         text: Data Cleaning
-      - href: data_exploration.qmd
+      - href: data_exploration.ipynb
         text: Data Exploration
       - href: clustering.qmd
         text: Clustering

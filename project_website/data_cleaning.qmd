@@ -282,7 +282,7 @@ Link to the cleaned dataset: [tracks_cleaned.csv](https://alex045.georgetown.dom
     Here is the distribution of the age in the dataset:
     ![distribution](./images/age_distribution.png)
     
-4. Using bine to create a 5 years range bin in the age values for better analysis. 
+4. Using bining to create a 5 years range bin in the age values for better analysis. 
     
     Before binning, the frequency of the age is like this:
     ![before](./images/age_freq.png)
