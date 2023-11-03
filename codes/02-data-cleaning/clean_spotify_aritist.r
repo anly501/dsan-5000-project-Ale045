@@ -31,24 +31,22 @@ df_artist$genre[is.na(df_artist$genre)] <- "undefined"
 df_artist$broad_genre <- df_artist$genre
 print(unique(df_artist$broad_genre))
 # Basic reduce
-df_artist$broad_genre <- gsub("^(.*hip hop.*)$", "hip hop", df_artist$broad_genre)
-df_artist$broad_genre <- gsub("^(.*rap.*)$", "hip hop", df_artist$broad_genre)
-df_artist$broad_genre <- gsub("^(.*trap.*)$", "hip hop", df_artist$broad_genre)
+# df_artist$broad_genre <- gsub("^(.*hip hop.*)$", "hip hop", df_artist$broad_genre)
+# df_artist$broad_genre <- gsub("^(.*rap.*)$", "hip hop", df_artist$broad_genre)
+# df_artist$broad_genre <- gsub("^(.*trap.*)$", "hip hop", df_artist$broad_genre)
 
-df_artist$broad_genre <- gsub("^(.*pop.*)$", "pop", df_artist$broad_genre)
-df_artist$broad_genre <- gsub("^(.*rock.*)$", "rock", df_artist$broad_genre)
+# df_artist$broad_genre <- gsub("^(.*pop.*)$", "pop", df_artist$broad_genre)
+# df_artist$broad_genre <- gsub("^(.*rock.*)$", "rock", df_artist$broad_genre)
 
 # Specific reduce
 genre_mapping <- list(
-  "pop" = c("dance pop", "k-pop", "pop", "latin pop", "chill pop", "canadian pop", "baroque pop"),
-  "hip hop" = c("alt z", "hip hop"),
-  "r&b" = c("uk contemporary r&b", "alternative r&b", "neo soul", "british soul", "canadian contemporary r&b", "lgbtq+ hip hop"),
-  "rock" = c("garage rock", "alternative rock", "modern rock", "indie rock italiano", "modern blues rock", "modern alternative pop", "kentucky indie"),
-  "indie" = c("indie pop", "pov: indie"),
-  "electron" = c("brostep", "big room", "aussietronica"),
-  "latin" = c("reggaeton", "trap latino", "urbano espanol", "colombian pop"),
-  "country" = c("classic oklahoma country", "contemporary country", "modern country pop", "black americana"),
-  "drill" = c("melodic drill", "bronx drill", "chicago drill"),
+  pop = c("dance pop", "k-pop", "pop", "latin pop", "chill pop", "canadian pop", "baroque pop", "classic oklahoma country", "contemporary country", "modern country pop", "black americana",  "art pop", "puerto rican pop"),
+  hip_hop_rap = c("alt z", "hip hop", "melodic drill", "bronx drill", "chicago drill", 'trap queen', "lgbtq+ hip hop", 'rap canario', "canadian hip hop", "atl hip hop", "uk hip hop", "desi hip hop", "houston rap", "hip pop", "conscious hip hop", "country rap", "rap", "dfw rap", "florida rap", "australian hip hop", "deep underground hip hop", "memphis hip hop", "chicago rap", "ohio hip hop"),
+  rnb_soul = c("uk contemporary r&b", "alternative r&b", "neo soul", "british soul", "canadian contemporary r&b"),
+  rock_alternative = c("garage rock", "alternative rock", "modern rock", "indie rock italiano", "modern blues rock", "modern alternative pop", "kentucky indie"),
+  electronic_dance = c("brostep", "big room", "aussietronica"),
+  latin = c("reggaeton", "trap latino", "urbano espanol", "colombian pop"),
+  indie_folk = c("indie pop"),
   "others" = c("corridos tumbados", "gen z singer-songwriter", "j-division", "bubblegum dance", "escape room", "gauze pop", "boy band", "afrobeats", "corrido", "musica chihuahuense", "musica mexicana", "chopped and screwed", "texas latin rap", "pluggnb")
 )
 
@@ -59,7 +57,8 @@ map_to_broad_genre <- function(genre) {
       return(category)
     }
   }
-  return("Other")
+  print(genre)
+  return("others")
 }
 
 df_artist <- df_artist %>%

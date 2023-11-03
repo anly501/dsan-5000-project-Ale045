@@ -8,7 +8,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 df_event <- read_csv("../../data/00-raw-data/last.fm.data/listening_events.tsv")
 
 # Sample 100000 rows from the dataset
-set.seed(1003)
+set.seed(1005)
 df_event <- df_event %>%
   sample_n(100000)
 

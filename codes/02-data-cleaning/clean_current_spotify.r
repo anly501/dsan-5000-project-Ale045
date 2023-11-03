@@ -22,7 +22,7 @@ df_all <- df_all[, -1]
 
 # Drop unnecessary columns
 df_all <- df_all %>%
-  select(-c("uri", "track_href", "analysis_url", "time_signature", "duration_ms", "type", "danceability"))
+  select(-c("uri", "track_href", "analysis_url", "time_signature", "duration_ms", "type"))
 
 # Change the id column name
 df_all <- df_all %>%

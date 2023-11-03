@@ -3,17 +3,17 @@ from sklearn.feature_extraction.text import CountVectorizer
 import string
 
 # read in the data
-df_lyrics = pd.read_csv('../../data/00-raw-data/genius_lyrics.csv')
-df_lyrics_global = pd.read_csv('../../data/00-raw-data/genius_lyrics_global.csv')
-df_lyrics_2022 = pd.read_csv('../../data/00-raw-data/genius_lyrics_2022.csv')
+# df_lyrics = pd.read_csv('../../data/00-raw-data/genius_lyrics.csv')
+# df_lyrics_global = pd.read_csv('../../data/00-raw-data/genius_lyrics_global.csv')
+# df_lyrics_2022 = pd.read_csv('../../data/00-raw-data/genius_lyrics_2022.csv')
 
-
+df_lyrics_all = pd.read_csv('../../data/00-raw-data/spotify_history_all_lyrics.csv')
 # union all the lyrcis dataframes into one
-df_lyrics_all = pd.concat([df_lyrics, df_lyrics_global, df_lyrics_2022], ignore_index=True)
+# df_lyrics_all = pd.concat([df_lyrics, df_lyrics_global, df_lyrics_2022], ignore_index=True)
 
 print(len(df_lyrics_all))
 # drop duplicates
-df_lyrics_all.drop_duplicates(subset=['track_id'], keep='first', inplace=True)
+# df_lyrics_all.drop_duplicates(subset=['track_id'], keep='first', inplace=True)
 
 print(len(df_lyrics_all))
 

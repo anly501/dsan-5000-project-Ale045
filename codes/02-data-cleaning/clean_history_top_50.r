@@ -22,37 +22,57 @@ df_track <- df_track %>%
 
 print(colnames(df_track))
 # Reduce the number of genres
-df_track$genre <- gsub("^(.*hip hop.*)$", "hip_hop", df_track$genre)
-df_track$genre <- gsub("^(.*rap.*)$", "hip_hop", df_track$genre)
-df_track$genre <- gsub("^(.*trap.*)$", "hip_hop", df_track$genre)
+# df_track$genre <- gsub("^(.*hip hop.*)$", "hip_hop", df_track$genre)
+# df_track$genre <- gsub("^(.*rap.*)$", "hip_hop", df_track$genre)
+# df_track$genre <- gsub("^(.*trap.*)$", "hip_hop", df_track$genre)
 
-df_track$genre <- gsub("^(.*pop.*)$", "pop", df_track$genre)
-df_track$genre <- gsub("^(.*rock.*)$", "rock", df_track$genre)
+# df_track$genre <- gsub("^(.*pop.*)$", "pop", df_track$genre)
+# df_track$genre <- gsub("^(.*rock.*)$", "rock", df_track$genre)
 
 print(unique(df_track$genre))
 
 
+# genre_mapping <- list(
+#   pop = c("dance pop", "k-pop", "pop", "british soul"),
+#   hip_hop = c("alt z", "hip hop"),
+#   r_and_b = c("canadian contemporary r&b", "r&b"),
+#   rock = c("neo mellow", "rock"),
+#   indie = c("indie pop", "pov: indie", "alaska indie"),
+#   electron = c("big room", "electro", "complextro", "house", "australian dance", "tropical house", "belgian edm", "edm", "electro house", "downtempo", "brostep"),
+#   latin = c("reggaeton", "trap latino", "urbano espanol", "colombian pop", "latin", "canadian latin"),
+#   country = c("classic oklahoma country", "contemporary country",
+#               "modern country pop", "black americana"),
+#   drill = c("melodic drill", "bronx drill", "chicago drill"),
+#   mixed = c("permanent wave", "boy band", "hollywood", "escape room", "alternative r&b")
+# )
+
 genre_mapping <- list(
-  pop = c("dance pop", "k-pop", "pop", "british soul"),
-  hip_hop = c("alt z", "hip hop"),
-  r_and_b = c("canadian contemporary r&b", "r&b"),
-  rock = c("neo mellow", "rock"),
-  indie = c("indie pop", "pov: indie", "alaska indie"),
-  electron = c("big room", "electro", "complextro", "house", "australian dance", "tropical house", "belgian edm", "edm", "electro house", "downtempo", "brostep"),
-  latin = c("reggaeton", "trap latino", "urbano espanol", "colombian pop", "latin", "canadian latin"),
-  country = c("classic oklahoma country", "contemporary country",
-              "modern country pop", "black americana"),
-  drill = c("melodic drill", "bronx drill", "chicago drill"),
-  mixed = c("permanent wave", "boy band", "hollywood", "escape room", "alternative r&b")
+  pop = c("neo mellow", "dance pop", "pop", "canadian pop", "barbadian pop",
+          "australian pop", "art pop", "colombian pop", "acoustic pop",
+          "boy band", "baroque pop", "candy pop", "electropop",
+          "danish pop", "moroccan pop"),
+  hip_hop_rap = c("detroit hip hop", "hip pop", "atl hip hop", "chicago rap",
+                  "canadian hip hop", "australian hip hop", "hip hop"),
+  electronic_dance = c("big room", "electro", "complextro", "house",
+                       "australian dance", "tropical house", "belgian edm",
+                       "electronic trap", "edm", "electro house",
+                       "downtempo", "brostep"),
+  rock_alternative = c("permanent wave", "celtic rock"),
+  rnb_soul = c("british soul", "canadian contemporary r&b", "alternative r&b"),
+  indie_folk = c("indie pop", "alaska indie", "folk-pop",
+                 "irish singer-songwriter", "french indie pop"),
+  latin = c("latin", "canadian latin"),
+  others = c("metropopolis", "hollywood", "contemporary country", "escape room")
 )
 
 map_to_broad_genre <- function(genre) {
+  print(genre)
   for (category in names(genre_mapping)) {
     if (genre %in% genre_mapping[[category]]) {
       return(category)
     }
   }
-  return("other")
+  return("others")
 }
 
 df_track <- df_track %>%
