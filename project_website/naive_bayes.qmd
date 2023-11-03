@@ -1,0 +1,34 @@
+---
+title: "Naive Bayes"
+format: 
+    html: 
+        toc: true
+        embed-resources: true
+---
+
+## Introduction to Naive Bayes
+
+Naive Bayes is a classification algorithm that is suitable for binary and multiclass classification. It is based on the Bayes theorem and assumes that the features are independent of each other which is why it is called naive. Though the assumption does not hold true for most statistical data, the algorithm still achive good performace in many cases. 
+
+## Bayes Theorem
+
+Bayes theorem is a probabability theory which update the prior belife by incorporating new evidence. The formula is as follows:
+
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+where $P(A|B)$ is the posterior probability, $P(B|A)$ is the likelihood, $P(A)$ is the prior probability and $P(B)$ is the evidence.
+
+In a Naive Bayes classifier, each time we use this formula to calculate the posterior probability of each class and the class with the highest probability is the predicted class.
+
+
+## Aim
+
+In this project, I will propse two Naive Bayes classifer which one of them will be using the music's acoustic features to predcit the year range of the song and the other using the lyric of the song to predict the valence stage.
+
+## Different types of Naive Bayes Classifiers
+
+1. Gaussian Naive Bayes: It is used in classification and assumes that the features follow a normal distribution.This is normally used when dealing with contiouns data.
+
+2. Multinomial Naive Bayes: It is used in classification and assumes that the features follow a multinomial distribution. This is normally used when dealing with discrete data.
+
+3. Bernoulli Naive Bayes: It is used in classification and assumes that the features follow a Bernoulli distribution. This is normally used when dealing with binary data.
