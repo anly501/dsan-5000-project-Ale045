@@ -29,9 +29,9 @@ website:
             href: naive_bayes_record.ipynb
           - text: Naive Bayes on Text Data
             href: nb_text.ipynb
-      - href: clustering.qmd
+      - href: clustering.ipynb
         text: Clustering
-      - href: dimensionality_reduction.qmd
+      - href: dimensionality_reduction.ipynb
         text: Dimensionality Reduction
       - href: dicision_tree.qmd
         text: Decision Tree
