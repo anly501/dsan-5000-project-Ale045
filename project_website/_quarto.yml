@@ -33,7 +33,7 @@ website:
         text: Clustering
       - href: dimensionality_reduction.ipynb
         text: Dimensionality Reduction
-      - href: dicision_tree.qmd
+      - href: decision_tree.ipynb
         text: Decision Tree
       - href: arm.qmd
         text: ARM
