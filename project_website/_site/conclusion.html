@@ -4544,7 +4544,26 @@ vertical-align: -.125em;
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#answer-the-data-science-questions" id="toc-answer-the-data-science-questions" class="nav-link active" data-scroll-target="#answer-the-data-science-questions">Answer the Data Science Questions</a>
+  <ul class="collapse">
+  <li><a href="#which-genres-are-most-popular-from-year-to-year-and-how-it-is-changing" id="toc-which-genres-are-most-popular-from-year-to-year-and-how-it-is-changing" class="nav-link" data-scroll-target="#which-genres-are-most-popular-from-year-to-year-and-how-it-is-changing">Which genres are most popular from year to year and how it is changing?</a></li>
+  <li><a href="#is-the-audio-features-of-music-becoming-more-homogeneous-in-the-last-decade" id="toc-is-the-audio-features-of-music-becoming-more-homogeneous-in-the-last-decade" class="nav-link" data-scroll-target="#is-the-audio-features-of-music-becoming-more-homogeneous-in-the-last-decade">Is the audio features of music becoming more homogeneous in the last decade?</a></li>
+  <li><a href="#what-music-most-attractive-to-gen-z" id="toc-what-music-most-attractive-to-gen-z" class="nav-link" data-scroll-target="#what-music-most-attractive-to-gen-z">What music most attractive to Gen Z?</a></li>
+  <li><a href="#is-the-lyrics-of-the-music-becoming-more-homogeneous" id="toc-is-the-lyrics-of-the-music-becoming-more-homogeneous" class="nav-link" data-scroll-target="#is-the-lyrics-of-the-music-becoming-more-homogeneous">Is the lyrics of the music becoming more homogeneous?</a></li>
+  <li><a href="#are-there-any-traits-of-the-musics-heavily-used-in-tiktok" id="toc-are-there-any-traits-of-the-musics-heavily-used-in-tiktok" class="nav-link" data-scroll-target="#are-there-any-traits-of-the-musics-heavily-used-in-tiktok">Are there any traits of the musics heavily used in TikTok?</a></li>
+  <li><a href="#are-there-significant-difference-between-the-audio-features-and-the-listener-age" id="toc-are-there-significant-difference-between-the-audio-features-and-the-listener-age" class="nav-link" data-scroll-target="#are-there-significant-difference-between-the-audio-features-and-the-listener-age">Are there significant difference between the audio features and the listener age?</a></li>
+  <li><a href="#is-it-appropriate-to-use-the-audio-features-instead-of-the-genre-to-do-the-analysis" id="toc-is-it-appropriate-to-use-the-audio-features-instead-of-the-genre-to-do-the-analysis" class="nav-link" data-scroll-target="#is-it-appropriate-to-use-the-audio-features-instead-of-the-genre-to-do-the-analysis">Is it appropriate to use the audio features instead of the genre to do the analysis?</a></li>
+  <li><a href="#is-there-any-difference-in-preference-on-music-between-the-two-genders" id="toc-is-there-any-difference-in-preference-on-music-between-the-two-genders" class="nav-link" data-scroll-target="#is-there-any-difference-in-preference-on-music-between-the-two-genders">Is there any difference in preference on music between the two genders?</a></li>
+  <li><a href="#are-there-any-significant-featurs-in-trending-music" id="toc-are-there-any-significant-featurs-in-trending-music" class="nav-link" data-scroll-target="#are-there-any-significant-featurs-in-trending-music">Are there any significant featurs in trending music?</a></li>
+  </ul></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -4566,8 +4585,57 @@ vertical-align: -.125em;
 
 </header>
 
+<section id="answer-the-data-science-questions" class="level2">
+<h2 class="anchored" data-anchor-id="answer-the-data-science-questions">Answer the Data Science Questions</h2>
+<p>Before we start the conclusion, we frist look back some of the important data science questions in the previous sections. In this section, we will use the results from the previous sections to answer these questions and couclude the project.</p>
+<section id="which-genres-are-most-popular-from-year-to-year-and-how-it-is-changing" class="level3">
+<h3 class="anchored" data-anchor-id="which-genres-are-most-popular-from-year-to-year-and-how-it-is-changing">Which genres are most popular from year to year and how it is changing?</h3>
+<p>From the previous sections, it is easy to see that the most popular genre is pop. Pop has dominate the music industry for a long time, and we can observe shift of the attention to other genres in the last decade is quite obvious. Hip and Hop and new emerging mixed genres recevied increasing attention in the last decade, but pop is still the most popular one though not as dominate as before.</p>
+</section>
+<section id="is-the-audio-features-of-music-becoming-more-homogeneous-in-the-last-decade" class="level3">
+<h3 class="anchored" data-anchor-id="is-the-audio-features-of-music-becoming-more-homogeneous-in-the-last-decade">Is the audio features of music becoming more homogeneous in the last decade?</h3>
+<p>From life experience, we might has an intuitive feeling that the music is becoming more homogenoeous. However, the research result can’t support this claim. We can see the variance of the audio features such as energy and danceability are remains pretty stable across the decades, some of the feature such as beats even become more diverse. Also, from the Naive Bayes model’s result, we can see it is hard to predict a song’s year group using the audio features. So we can say that the audio features of the music did not change too much within the last decade of time.</p>
+</section>
+<section id="what-music-most-attractive-to-gen-z" class="level3">
+<h3 class="anchored" data-anchor-id="what-music-most-attractive-to-gen-z">What music most attractive to Gen Z?</h3>
+<p>We can conclude that the Gen Z are more likely to listen to music from artist with younger age, we can see from the previous section that some of the favorite artist of Gen Z are even just 20 years old like Billie Ellish. In fact, it is a situation happens in every year group, each group of people are more likely to listen to the artist closer to their age.</p>
+</section>
+<section id="is-the-lyrics-of-the-music-becoming-more-homogeneous" class="level3">
+<h3 class="anchored" data-anchor-id="is-the-lyrics-of-the-music-becoming-more-homogeneous">Is the lyrics of the music becoming more homogeneous?</h3>
+<p>Intuitively, we might find the lyrics of the music is becoming more similar to each other and losing the diversity in the recent years. In this research, we do find using the lyric to predict the year of the song is year group is highly available. So it is safe to say that the lyrics of the music is definitely becoming more chaning over the years. However, we can’t make sure if it is becoming more homogeneous or not. On the other hands, using the audio feature to predict the year group is not a good idea accoding to the result. So we can say that there might not much variance in the audio features of the music over the years. More on that can be found in the Naive Bayes section.</p>
+</section>
+<section id="are-there-any-traits-of-the-musics-heavily-used-in-tiktok" class="level3">
+<h3 class="anchored" data-anchor-id="are-there-any-traits-of-the-musics-heavily-used-in-tiktok">Are there any traits of the musics heavily used in TikTok?</h3>
+<p>From the scatter plots of audio feature, it can be observed that the trending musics on TikTok are clustered in the high energy and high danceability space. Which aligns with our common sense that the music used in TikTok are more likely to be energetic and danceable to pair with the video content.</p>
+</section>
+<section id="are-there-significant-difference-between-the-audio-features-and-the-listener-age" class="level3">
+<h3 class="anchored" data-anchor-id="are-there-significant-difference-between-the-audio-features-and-the-listener-age">Are there significant difference between the audio features and the listener age?</h3>
+<p>The distribution of the audio features of the musics are indeed different between various age groups but not very significant. This is also supported by the result of the decision tree model trying to predict the age group using the listening event’s audio feature (not included in the report due to too low accuracy). However it is a bit counter-intuitive. The reason could be the fact that most listner in the dataset are from 15-30 years old, which makes the difference between the age groups not very significant.</p>
+</section>
+<section id="is-it-appropriate-to-use-the-audio-features-instead-of-the-genre-to-do-the-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="is-it-appropriate-to-use-the-audio-features-instead-of-the-genre-to-do-the-analysis">Is it appropriate to use the audio features instead of the genre to do the analysis?</h3>
+<p>As we all aware, the genre of music is becoming more and more diverse in the recent years. Also, the boundary between different genres are becoming vague and subjective. Especially in the cases where a music uses multiple genres at the same time, which cause great trouble to the analysis. We are tring to find a way to group the music using their audio features instead of more subjective genre labels. The reserach shows promising result using the tempo of the music to group them into different clusters. This indicate that we could do more analysis base on the tempo of the music. This can be further assured by the fact that we can predict the tempo using other audio feature with high accuracy. More on this could be find on the decision tree and clustering section.</p>
+</section>
+<section id="is-there-any-difference-in-preference-on-music-between-the-two-genders" class="level3">
+<h3 class="anchored" data-anchor-id="is-there-any-difference-in-preference-on-music-between-the-two-genders">Is there any difference in preference on music between the two genders?</h3>
+<p>According to the research done, we can say that the differnece between the music taste in the two gender are at least not significant. While we can’t say there are no difference at all, we can say that the difference is not be able to captured by the decision tree model or random forest. But there is one simple observation from the data that male are the dominant listener of the music, having a number exceeds four times of the female listeners.</p>
+</section>
+<section id="are-there-any-significant-featurs-in-trending-music" class="level3">
+<h3 class="anchored" data-anchor-id="are-there-any-significant-featurs-in-trending-music">Are there any significant featurs in trending music?</h3>
+<p>From our analysis, there are no significant features that can be used to predict the whether a music is popular or not. However, there are some basic traits that the popular music share, such as high energy and dnaceability or loundness. But to predict a muisc’s popularity base on its audio feature still does not make too much sense.</p>
+</section>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>There are some limitations in this research, the most dominant one could be the difficulty in finding finicial data of the music industry. These data were clearly sensitive and if going to offical website, we can only find the report of the whole industry instead of more specific data. Also, the users’ data are also sensitive and the listening event data we could find does not obtain any audio features but only the track and artist name, so we will have to use the these information to get the audio features from the Spotify API. But the API has a limit of requests so it is not possible to get the full data for analysis and the searching for music using the name of track and artist also can introduce some errors. Lastly, the genre of music from any source are just too messy and sometimes even contradict to each other. It is hard to find a way to group the music using the genre. I can only use information from google search to group those specific genres into more general ones.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In conclusion, contemporary music trends are marked by high instability. This is evident in the wide variety of genres available today. Compared to earlier years, the music industry has become significantly more diverse, providing ample room for the emergence of new genres. We have witnessed the rise of hip-hop and other new genres, alongside the enduring dominance of pop music. Looking ahead, we can expect the boundaries between genres to blur further, leading to even greater diversity in music. Although there have been substantial changes in genres, the audio features of music have remained relatively stable compared to the past. On the other hand, the content of lyrics has undergone rapid and significant evolution over the years.</p>
+<p>Regarding listeners, Generation Z has emerged as the predominant audience, showing a preference for artists closer to their age, which means those artist in very young age. Interestingly, their preferences in terms of musical acoustics are not as distinct from other age groups as one might expect. It appears that differences in musical tastes across age groups are less about the audio features themselves and more about how these features are integrated into the music—through genre-blending and lyrical content.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
